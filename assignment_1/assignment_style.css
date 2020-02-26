@@ -1,13 +1,58 @@
-div, header {
+.header {
     display:flex;
-    justify-content:center;
+    justify-content:space-around;
+    background-color: rgba(56, 68, 161, 0.5);
 } 
 
-#logo {
+.logo {
     width: 200px;
     height: 130px;
 }
 
-#wrapper {
+.image2{
+    width: 200px;
+    height: 130px;
+}
+
+.container {
+    background-color: tan;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.wrapper {
+    background-color: white;
     
+}
+
+.skill {
+    font-family: 'Simonetta', cursive;
+}
+
+.projects {
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+}
+
+.desc {
+
+}
+
+.bubble {
+    display: flex;
+    justify-content:space-around;
+}
+
+.bubble2 {
+    background-color: white;
+    height: 10%;
+    width: 15%;
+    text-align: center;
+    align-self: center;
+
+
 }
