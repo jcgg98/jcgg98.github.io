@@ -46,11 +46,12 @@
 .projects {
     background-color: white;
     margin-top: 10px;
-    margin-left: 1px;
+    margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
     width: 40%;
     flex-wrap: wrap;
+    flex-grow: 1;
 
 }
 
@@ -62,6 +63,7 @@
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
+    flex-direction:
 
 }
 
