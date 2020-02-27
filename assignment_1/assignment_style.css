@@ -69,10 +69,17 @@
 .bubble2 {
     background-color: white;
     margin-top: 10px;
+    max-height: 50px;
     text-align: center;
 }
 
 @media screen and (max-width: 1000px){
-    
+    .bubble{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
 
 }
