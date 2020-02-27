@@ -1,7 +1,7 @@
 .header {
     display:flex;
     justify-content:space-around;
-    background-color: rgba(56, 68, 161, 0.5);
+    background-color: rgba(114, 3, 3, 0.863);
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
@@ -22,16 +22,17 @@
 
 .container {
     display:flex;
+    justify-content: center;
     background-color: tan;
     margin-bottom: 15px;
     padding: 10px;
-    height: 1000;
     flex-wrap: wrap;
 }
 
 .wrapper {
     background-color: white;
     flex-wrap: wrap;
+    justify-content: center;
     
 }
 
@@ -49,9 +50,7 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    width: 40%;
     flex-wrap: wrap;
-    flex-grow: 1;
 
 }
 
@@ -60,17 +59,20 @@
 }
 
 .bubble {
-    flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
-    flex-direction:
+    flex-direction: column;
+
 
 }
 
 .bubble2 {
     background-color: white;
-    height: 10%;
-    width: 25%;
+    margin-top: 10px;
     text-align: center;
-    align-self: center;
+}
+
+@media screen and (max-width: 1000px){
+    
+
 }
