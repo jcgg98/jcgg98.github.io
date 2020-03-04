@@ -9,7 +9,7 @@
     <div class="container">
       <div class="wrapper">
         <div class="header">Prof A's Demo Page</div>
-        <button class="button" onclick="clickMe()">
+        <button class="button" onclick="clickMe();">
           Click me to make a change
         </button>
         <div class="content">
@@ -20,15 +20,37 @@
             cronut glossier pork belly tacos poke next level fanny pack vegan
             jianbing lo-fi.
           </p>
+          <p class="p1" id="editable"></p>
+          <p class="p2"></p>
         </div>
         <div class="footer"></div>
       </div>
     </div>
     <script>
+      var str = "Justine Guloy";
+      var n = str.length;
+      var third = str.substr(2,1).toUpperCase();
+      var last3 = str.substr(-3,3);
+      var first = str.substr(0,7);
+      var last = str.substr(8);
+      var total = first.length + last.length
+
+
+      
       function clickMe() {
         const content = document.querySelector(".content");
         content.innerHTML = "Hello world";
+
+        const newtitle = document.querySelector(".header");
+        newtitle.innerHTML = "Justine Guloy's Lab 4 " + total;
+
+        document.querySelector(".content").innerHTML += "<p class=p1>My name has " + n + " characters</p>"
+
+        document.querySelector(".content").innerHTML += "<p class=p2>The third character in my name is " + third + "." + "<br>" + last3 +"</p>"
       }
+
+
+
     </script>
   </body>
 </html>
