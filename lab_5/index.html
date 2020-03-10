@@ -202,7 +202,7 @@
       { "name": "Reunion", "code": "RE" },
       { "name": "Romania", "code": "RO" },
       { "name": "Russian Federation", "code": "RU" },
-      { "name": "RWANDA", "code": "RW" },
+      { "name": "Rwanda", "code": "RW" },
       { "name": "Saint Helena", "code": "SH" },
       { "name": "Saint Kitts and Nevis", "code": "KN" },
       { "name": "Saint Lucia", "code": "LC" },
@@ -265,28 +265,32 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
-    console.log("List of countries in the world", countries);
-    const random = [];
+    
+    document.querySelector(".content").innerHTML += "<ol class=countries></ol>";
+
+    function sortNumber(a,b)  {
+      return a - b;
+    }
 
     function clickMe() {
-      document.querySelector(".content").innerHTML += "<ol class=countries></ol>";
+      console.log("List of countries in the world", countries);
+      const random = [];
+      document.querySelector(".content").innerHTML = "<ol class=countries></ol>";
       const newtitle = document.querySelector(".header");
       newtitle.innerHTML = "Justine Guloy's Lab 4 ";
 
-      for (let i = 0; i <25; i++) {
-        let x = Math.floor(Math.random() * 243) + 1;
+      for (let i = 0; i < 25; i++) {
+        let x = Math.floor(Math.random() * 243);
+        
         random.push(x);
+        random.sort(sortNumber);
       }
-      
-      
 
       for (let i = 0; i < random.length; i++) {
-        let country = countries[random[i]];
-        document.querySelector(".countries").innerHTML += "<li>" + "<strong>" + country["code"] + "</strong>" + " " + country["name"] + "</li>"
-
         
+        const country = countries[random[i]];
+        document.querySelector(".countries").innerHTML += "<li>" + "<strong>" + country["code"] + "</strong>" + " " + country["name"] + "</li>";
       }
-
     }
   </script>
 </body>
