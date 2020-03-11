@@ -274,7 +274,7 @@
 
     function clickMe() {
       console.log("List of countries in the world", countries);
-      const random = [];
+      const numbers = [];
       document.querySelector(".content").innerHTML = "<ol class=countries></ol>";
       const newtitle = document.querySelector(".header");
       newtitle.innerHTML = "Justine Guloy's Lab 4 ";
@@ -282,13 +282,13 @@
       for (let i = 0; i < 25; i++) {
         let x = Math.floor(Math.random() * 243);
         
-        random.push(x);
-        random.sort(sortNumber);
+        numbers.push(x);
+        numbers.sort(sortNumber);
       }
 
-      for (let i = 0; i < random.length; i++) {
+      for (let i = 0; i < numbers.length; i++) {
         
-        const country = countries[random[i]];
+        const country = countries[numbers[i]];
         document.querySelector(".countries").innerHTML += "<li>" + "<strong>" + country["code"] + "</strong>" + " " + country["name"] + "</li>";
       }
     }
