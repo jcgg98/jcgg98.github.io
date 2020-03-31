@@ -1,3 +1,6 @@
+/* Base code courtesy of 
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Image_gallery */
+
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
@@ -12,9 +15,24 @@ for (i = 1; i < 6; i++) {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', xxx);
     thumbBar.appendChild(newImage);
+    newImage.onclick = function(e) {
+        displayedImage.src = e.target.src;
+    }
 }
 
-
-
-
 /* Wiring up the Darken/Lighten button */
+
+btn.onclick = function() {
+    const btnClass = btn.getAttribute("class");
+    if(btnClass === "dark") {
+        btn.setAttribute("class", "light");
+        btn.textContent = "Lighten";
+        overlay.style.backgroundColor = "rgba(0,0,0,.5)"
+    }
+    else    {
+        btn.setAttribute("class", "dark");
+        btn.textContent = "Darken";
+        overlay.style.backgroundColor = "rgba(0,0,0,0)";
+    }
+}
+
