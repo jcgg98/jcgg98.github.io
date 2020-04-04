@@ -56,12 +56,16 @@
       const str1 = "<b>This is</b><br>Hornbake Library";
       const str2 = "<b>This is</b><br>Eppley Rec Centre";
       const str3 = "<b>This is</b><br>Mckeldin Library";
+      const str4 = "<b>This is</b><br>You suck Anahi";
       const mark1 = L.marker([38.988174, -76.941597]).addTo(mymap);
       const mark2 = L.marker([38.993522, -76.94515]).addTo(mymap);
       const mark3 = L.marker([38.985865, -76.944909]).addTo(mymap);
+      const mark4 = L.marker([33.959019, -84.480057]).addTo(mymap);
+
       mark1.bindPopup(str1).openPopup();
       mark2.bindPopup(str2).openPopup();
       mark3.bindPopup(str3).openPopup();
+      mark4.bindPopup(str4).openPopup();
 
       const obj = {
         coordinates1: {
