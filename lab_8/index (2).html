@@ -3,6 +3,7 @@
   <head>
     <title>Charts Lab</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
+    
   </head>
   <body>
     <div class="container">
@@ -15,7 +16,7 @@
         <div class="footer">Let's eat out in the future!</div>
       </div>
     </div>
-
+    
     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
@@ -58,11 +59,12 @@
           console.log(result);
 
           window.onload = function () {
-            var chart = new CanvasJS.Chart("chartContainer", {
+            var chart = new Canvasjs.Chart("chartContainer", {
               animationEnabled: true,
               title: {
-                text: "Desktop Search Engine Market Share - 2016",
+                text: "Somewhere to eat",
               },
+
               data: [
                 {
                   type: "pie",
