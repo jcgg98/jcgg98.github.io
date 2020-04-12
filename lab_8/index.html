@@ -3,7 +3,6 @@
   <head>
     <title>Charts Lab</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
-    
   </head>
   <body>
     <div class="container">
@@ -16,7 +15,7 @@
         <div class="footer">Let's eat out in the future!</div>
       </div>
     </div>
-    
+
     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
@@ -45,11 +44,11 @@
 
         .then((data) => {
           console.log("new data", data);
-          const reformattedData = Object.entries(data).map((m, i) => {
-            console.log(m);
+          const reformattedData = Object.entries(data).map((current, i) => {
+            console.log(current);
             return {
-              y: m[1].length,
-              label: m[0],
+              y: current[1].length,
+              label: current[0],
             };
             return reformattedData;
           });
@@ -59,12 +58,11 @@
           console.log(result);
 
           window.onload = function () {
-            var chart = new Canvasjs.Chart("chartContainer", {
+            var chart = new CanvasJS.Chart("chartContainer", {
               animationEnabled: true,
               title: {
-                text: "Somewhere to eat",
+                text: "Desktop Search Engine Market Share - 2016",
               },
-
               data: [
                 {
                   type: "pie",
