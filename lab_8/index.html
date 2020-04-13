@@ -26,8 +26,7 @@
           const clearEmptyData = data.filter((f) => f.geocoded_column_1);
           const refined = clearEmptyData.map((m) => ({
             category: m.category,
-            name: m.name,
-            latLong: m.geocoded_column_1.coordinates,
+
           }));
           return refined;
         })
