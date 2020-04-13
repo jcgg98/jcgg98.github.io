@@ -58,8 +58,19 @@
           console.log(result);
 
           window.onload = function () {
+            CanvasJS.addColorSet("mycolors",[
+            "#ff0000",
+            "#fffd00",
+            "#ffba97",
+            "#ff4d97",
+            "#b54d97",
+            "#b5c597",
+            "#55c597",
+            "#553f97"
+            ]);
             var chart = new CanvasJS.Chart("chartContainer", {
               animationEnabled: true,
+              colorSet: "mycolors",
               title: {
                 text: "Types of Food Places",
               },
