@@ -20,7 +20,6 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-
 function processDataForFrontEnd(req, res) {
   const baseURL = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json'; // Enter the URL for the data you would like to retrieve here
 
@@ -29,38 +28,33 @@ function processDataForFrontEnd(req, res) {
   // it instead handles returning data to your front end at line 34.
   fetch(baseURL)
     .then((result) => result.json())
-
-
     .then((data) => {
       const clearEmptyData = data.filter((f) => f.geocoded_column_1);
       const refined = clearEmptyData.map((m) => ({
-        category: m.category,
-
+        category: m.category
 
       }));
       return refined;
     })
 
-    .then((data) => {
-      return data.reduce((result, current) => {
-        if (!result[current.category]) {
-          result[current.category] = [];
-        }
-        result[current.category].push(current);
-        return result;
-      });
-    })
+    .then((data) => data.reduce((result, current) => {
+      if (!result[current.category]) {
+        result[current.category] = [];
+      }
+      result[current.category].push(current);
+      return result;
+    }))
 
     .then((data) => {
-      console.log("new data", data);
+      console.log('new data', data);
       const reformattedData = Object.entries(data).map((m, i) => {
         console.log(m);
         return {
           y: m[1].length,
-          label: m[0],
+          label: m[0]
         };
       });
-      return reformattedData
+      return reformattedData;
     })
 
     .then((data) => {
@@ -76,7 +70,7 @@ function processDataForFrontEnd(req, res) {
 // This is our first route on our server.
 // To access it, we can use a "GET" request on the front end
 // by typing in: localhost:3000/api or 127.0.0.1:3000/api
-app.get('/api', (req, res) => { processDataForFrontEnd(req, res) });
+app.get('/api', (req, res) => { processDataForFrontEnd(req, res); });
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

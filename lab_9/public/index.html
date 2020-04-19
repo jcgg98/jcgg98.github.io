@@ -22,23 +22,35 @@
       .then((res) => {
         // Here's where your chart code should go.
 
-
-        const chart = new CanvasJS.Chart('chartContainer', {
-          animationEnabled: true,
-          title: {
-            text: 'Places that serve food in PG county'
-          },
-          data: [
-            {
-              type: 'pie',
-              startAngle: 240,
-              yValueFormatString: '0',
-              indexLabel: '{label} {y}',
-              dataPoints: res
-            }
-          ]
-        });
-        chart.render();
+        window.onload = function () {
+            CanvasJS.addColorSet("mycolors",[
+            "#ff0000",
+            "#fffd00",
+            "#ffba97",
+            "#ff4d97",
+            "#b54d97",
+            "#b5c597",
+            "#55c597",
+            "#553f97"
+            ]);
+        };
+        const chart = new CanvasJS.Chart("chartContainer", {
+              animationEnabled: true,
+              colorSet: "mycolors",
+              title: {
+                text: "Types of Food Places",
+              },
+              data: [
+                {
+                  type: "pie",
+                  startAngle: 240,
+                  yValueFormatString: '0',
+                  indexLabel: "{label} {y}",
+                  dataPoints: result
+                },
+              ],
+            });
+            chart.render();
       });
   </script>
 </body>
