@@ -14,12 +14,32 @@
       <div class="footer"></div>
     </div>
   </div>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <script>
     fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json());
+
+      .then((res) => {
         // Here's where your chart code should go.
-      })
+
+
+        const chart = new CanvasJS.Chart('chartContainer', {
+          animationEnabled: true,
+          title: {
+            text: 'Places that serve food in PG county'
+          },
+          data: [
+            {
+              type: 'pie',
+              startAngle: 240,
+              yValueFormatString: '0',
+              indexLabel: '{label} {y}',
+              dataPoints: res
+            }
+          ]
+        });
+        chart.render();
+      });
   </script>
 </body>
 
