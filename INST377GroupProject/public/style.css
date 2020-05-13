@@ -1,7 +1,7 @@
 /*About page css */
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 375px) {
     .teampictures {
         display: flex;
         justify-content: space-between;
